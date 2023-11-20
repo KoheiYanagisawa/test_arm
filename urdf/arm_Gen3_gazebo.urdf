@@ -5,6 +5,8 @@
   </material> -->
   
 
+
+  
   <link name="base_link"/>
 
   <joint name="body1_joint" type="fixed">
