@@ -9,7 +9,7 @@
   <rosparam file = "$(find test_arm)/config/arm_Gen3_config.yaml" command = "load"/>
   <node name="controller_spawner" pkg="controller_manager"
         type="spawner" respawn="false"
-        output="screen" ns="/arm_robot"
+        output="screen" ns="/arm_Gen3_robot"
         args="body2_joint_position_controller
               body3_joint_position_controller
               body4_joint_position_controller
