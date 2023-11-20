@@ -1,10 +1,13 @@
 <?xml version="1.0"?>
-<robot name="test_robot">
-  <!-- <material name="red">
-    <color rgba="1.0 0.0 0.0 1.0"/>
-  </material> -->
-  
+<robot name="arm_Gen3_robot">
+
+  <link name="world"/>
   <link name="base_link"/>
+  <!--台座と作業台（world）をつなぐjoint-->
+  <joint name="base_joint" type="fixed">
+    <parent link="world"/>
+    <child link="base_link"/> 
+  </joint>
 
   <joint name="body1_joint" type="fixed">
     <parent link="base_link"/>
@@ -52,6 +55,70 @@
     <limit lower="-1.5" upper="1.5" effort="0" velocity="0"/>
     <axis xyz="0.0 0.0 1.0"/>
   </joint>
+
+  
+  <transmission name="body2_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="body2_joint">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="body2_motor">
+       <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+       <mechanismReduction>1</mechanismReduction>
+    </actuator>
+  </transmission>
+  <transmission name="body3_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="body3_joint">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="body3_motor">
+       <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+       <mechanismReduction>1</mechanismReduction>
+    </actuator>
+  </transmission>
+  <transmission name="body4_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="body4_joint">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="body4_motor">
+       <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+       <mechanismReduction>1</mechanismReduction>
+    </actuator>
+  </transmission>
+  <transmission name="body5_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="body5_joint">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="body5_motor">
+       <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+       <mechanismReduction>1</mechanismReduction>
+    </actuator>
+  </transmission>
+  <transmission name="body6_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="body6_joint">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="body6_motor">
+       <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+       <mechanismReduction>1</mechanismReduction>
+    </actuator>
+  </transmission>
+  <transmission name="body7_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="body7_joint">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="body7_motor">
+       <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+       <mechanismReduction>1</mechanismReduction>
+    </actuator>
+  </transmission>
+
+
 
   <link name="body1_link">
     <visual>
@@ -220,5 +287,16 @@
      <origin xyz="0 0 0.065" rpy="0 0 0"/>
    </collision>
    <!--  -->
-  </link>
+  </link>]
+  <!--add_GazeboPlugin-->
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>/arm_robot</robotNamespace>
+      <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+      <legacyModeNS>true</legacyModeNS>
+    </plugin>
+    <!-- <plugin name="joint_state_publisher" filename="libgazebo_ros_joint_state_publisher.so">
+      <jointName>arm1_joint, arm2_joint, arm3_joint</jointName>
+    </plugin> -->
+  </gazebo>
 </robot>
