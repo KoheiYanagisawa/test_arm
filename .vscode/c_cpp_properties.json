@@ -1,0 +1,28 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/ubuntu/catkin_ws/devel/include/**",
+        "/opt/ros/noetic/include/**",
+        "/home/ubuntu/catkin_ws/src/crane_x7_ros/crane_x7_control/include/**",
+        "/home/ubuntu/catkin_ws/src/DynamixelSDK/ros/dynamixel_sdk/include/**",
+        "/home/ubuntu/catkin_ws/src/dynamixel-workbench/dynamixel_workbench_controllers/include/**",
+        "/home/ubuntu/catkin_ws/src/dynamixel-workbench/dynamixel_workbench_operators/include/**",
+        "/home/ubuntu/catkin_ws/src/dynamixel-workbench/dynamixel_workbench_toolbox/include/**",
+        "/home/ubuntu/catkin_ws/src/robot_arm/include/**",
+        "/home/ubuntu/catkin_ws/src/test_arm/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}

@@ -1,0 +1,6 @@
+1.gazebo kakuninn
+roslaunch test_arm arm_robot.launch
+
+2.rviz kakuninn
+cd test_arm/urdf
+roslaunch urdf_tutorial display.launch model:=arm_robot.urdf
